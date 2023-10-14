@@ -11,11 +11,23 @@ PYTHON ==> 065Y9H
 
 Let's break down the "PYTHON" example, look at your keyboard.
 You want the letter P, so you type the letter above it, that is 0
+
+
 You want the letter Y, so you type the letter above it, that is 6
+
+
 You want the letter T, so you type the letter above it, that is 5
+
+
 You want the letter H, so you type the letter above it, that is Y
+
+
 You want the letter O, so you type the letter above it, that is 9
+
+
 You want the letter N, so you type the letter above it, that is H
+
+
 
 How can you use this? 
 My main idea was that you can use this to create secure passwords without having to write them down or remember them. Using this way of encryption, you can turn regular, and easy words to remember into something that can not be decrypted that easily and is hard to guess.
