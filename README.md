@@ -10,12 +10,12 @@ QWERTY ==> 123456
 PYTHON ==> 065Y9H
 
 Let's break down the "PYTHON" example, look at your keyboard.
-You want the letter P, so you type the letter above it, that is 0
-You want the letter Y, so you type the letter above it, that is 6
-You want the letter T, so you type the letter above it, that is 5
-You want the letter H, so you type the letter above it, that is Y
-You want the letter O, so you type the letter above it, that is 9
-You want the letter N, so you type the letter above it, that is H
+You want the letter P, so you type the letter above it, that is 0.
+You want the letter Y, so you type the letter above it, that is 6.
+You want the letter T, so you type the letter above it, that is 5.
+You want the letter H, so you type the letter above it, that is Y.
+You want the letter O, so you type the letter above it, that is 9.
+You want the letter N, so you type the letter above it, that is H.
 
 
 
