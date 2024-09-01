@@ -2,15 +2,13 @@
 using namespace std;
 string sentence;
 string translation;
-// ans stands for "answer" and we will use these value to see if user wants to encrypt or decrypt a message | restart is another value we will check to see if the user wants the code to run again
+// ans will be used to see if user wants to decrypt or encrypt | restart will be used to see if user wants to restart the code
 char ans, restart;
 bool run = true;
 
-//All characters we will use. Q = 1 and so on
-char normal[] = {'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '_'};
-char encrypted[]={'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'A', 'S', 'D', 'F', 'G', 'H', 'J', '_'};
-
+//C is map for encryption, while DC map is reverse C map used for decryption
 map<char, char> c;
+map<char, char> dc;
 
 //Declaration of the map, fold for convinience
 void declaration()
@@ -42,6 +40,11 @@ void declaration()
     c['N'] = 'H';
     c['M'] = 'J';
     c[' '] = ' ';
+
+    for(const auto& pair : c)
+    {
+        dc[pair.second] = pair.first;
+    }
 }
 
 //Function that will encrypt the message
@@ -63,35 +66,36 @@ void encryption()
 //Function that will decrypt the message
 void decryption()
 {
-    for(int i = 0; i < sentence.length(); i++)
+    for(char ch : sentence)
     {
-        for(int k = 0; k < 27; k++)
+        if(dc.find(ch) != c.end())
         {
-            if(sentence.at(i) == encrypted[k])
-            {
-                translation.push_back(normal[k]);
-            }
+            translation.push_back(dc.at(ch));
+        }
+        else
+        {
+            translation.push_back(ch);
         }
     }
-
 }
 
 int main()
 {
     declaration();
     //Some user interface
-    printf("======================================================================================================================== \n");
-    printf("Welcome to QWERTY encrypt. Type out your word here, and we will encrypt/decrypt it for you. \n This is a good way to store your passwords, as you can just encrypt your name or something simple \n");
-    printf("Please use only upper case letters! Use _ for spaces!\n");
+    cout<<"======================================================================================================================== \n";
+    cout<<"Welcome to QWERTY encrypt. Type out your sentence here, and we will encrypt/decrypt it for you. \n";
+    cout<<"Please use only upper case letters!\n";
 
     //We use run boolean to check if the user wants to use the program again
     while(run)
     {
         translation.clear();
-        printf("Do you wish to decrypt or to encrypt a message? D/E \n");
+        cout<<"Do you wish to decrypt or to encrypt a message? D/E \n";
         cin>>ans;
-        printf("Sentence: \n");
-        cin>>sentence;
+        cin.ignore();
+        cout<<"Sentence: \n";
+        getline(cin, sentence);
 
         if(ans == 'D')
         {
@@ -102,8 +106,8 @@ int main()
             encryption();
         }
         cout<<"Translate: "<<translation<<endl;
-        printf("======================================================================================================================== \n");
-        printf("Again? Y/N \n");
+        cout<<"======================================================================================================================== \n";
+        cout<<"Again? Y/N \n";
         cin>>restart;
 
         if(restart == 'Y')
