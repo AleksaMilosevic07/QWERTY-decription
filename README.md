@@ -1,5 +1,7 @@
 # QWERTY Decryption
 
+This entire project has been remade for C# and now comes with a full scale GUI, this version will not be updated anymore. New link: https://github.com/AleksaMilosevic07/QwertyEncryptionCSHARP
+
 This is a small project I created to test my knowledge and create something cool. The basic idea behind this project is that it can serve as a password generator.
 
 How does QWERTY decryption work? It is quite simple; it is inspired by the QWERTY-style keyboard that you are probably using right now. Essentially, you use the key above your desired key. For example, if you want to type the letter Q, you will type what is above the letter Q, which is 1. 
